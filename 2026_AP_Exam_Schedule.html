@@ -188,10 +188,12 @@
     text-align: left;
     white-space: nowrap;
     border-bottom: 3px solid var(--gold);
+    border-right: 1px solid rgba(255,255,255,0.12);
     position: sticky;
     top: 53px;
     z-index: 10;
   }
+  thead th:last-child { border-right: none; }
   thead th.center { text-align: center; }
   thead .th-group {
     background: var(--navy-light);
@@ -200,6 +202,7 @@
     letter-spacing: 1.2px;
     color: var(--gold-light);
     border-bottom: 2px solid rgba(201,168,76,0.35);
+    border-right: 1px solid rgba(255,255,255,0.18);
     position: sticky;
     top: 53px;
     z-index: 10;
@@ -239,7 +242,9 @@
     padding: 11px 14px;
     vertical-align: top;
     line-height: 1.45;
+    border-right: 1px solid var(--gray-200);
   }
+  td:last-child { border-right: none; }
   td.center { text-align: center; }
 
   /* DATE cell */
