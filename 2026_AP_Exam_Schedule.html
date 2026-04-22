@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 AP Exam Schedule — Complete Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #122240;
+    --navy-light: #1a3258;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --cream: #faf8f3;
+    --white: #ffffff;
+    --gray-100: #f4f2ed;
+    --gray-200: #e8e4dc;
+    --gray-400: #9e9a90;
+    --gray-600: #6b6760;
+    --morning: #1a6b8a;
+    --morning-light: #e8f4f8;
+    --afternoon: #6b3a8c;
+    --afternoon-light: #f3eef8;
+    --week1-border: #c9a84c;
+    --week2-border: #5a8a4c;
+    --week2: #5a8a4c;
+    --week2-light: #eef4eb;
+    --shadow: 0 2px 12px rgba(10,22,40,0.10);
+    --shadow-hover: 0 6px 24px rgba(10,22,40,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* ── HEADER ─────────────────────────────────────────────────── */
+  .page-header {
+    background: var(--navy);
+    background-image: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 48px 40px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+  }
+  .page-header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 20%;
+    width: 500px; height: 120px;
+    background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 70%);
+  }
+  .header-inner { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
+  .header-kicker {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .header-sub {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    max-width: 620px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .meta-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+  }
+  .meta-pill .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* ── LEGEND / CONTROLS ──────────────────────────────────────── */
+  .controls-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 2px 8px rgba(10,22,40,0.07);
+  }
+  .controls-inner { max-width: 1400px; margin: 0 auto; width: 100%; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .legend-label { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-400); margin-right: 4px; }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gray-600);
+  }
+  .legend-swatch {
+    width: 12px; height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .swatch-morning { background: var(--morning); }
+  .swatch-afternoon { background: var(--afternoon); }
+  .swatch-week1 { background: var(--week1-border); }
+  .swatch-week2 { background: var(--week2); }
+  .search-wrap { margin-left: auto; }
+  #searchInput {
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 7px 14px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    color: var(--navy);
+    outline: none;
+    width: 220px;
+    transition: border-color .2s;
+    background: var(--cream);
+  }
+  #searchInput:focus { border-color: var(--navy); background: var(--white); }
+  #searchInput::placeholder { color: var(--gray-400); }
+
+  /* ── TABLE WRAPPER ───────────────────────────────────────────── */
+  .table-outer { padding: 32px 40px 60px; max-width: 1400px; margin: 0 auto; }
+  .table-scroll { overflow-x: auto; border-radius: 14px; box-shadow: var(--shadow); }
+
+  /* ── TABLE ───────────────────────────────────────────────────── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    background: var(--white);
+    min-width: 900px;
+  }
+
+  /* THEAD */
+  thead th {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 14px 14px 13px;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 3px solid var(--gold);
+    position: sticky;
+    top: 53px;
+    z-index: 10;
+  }
+  thead th.center { text-align: center; }
+  thead .th-group {
+    background: var(--navy-light);
+    font-size: 10px;
+    padding: 7px 14px 6px;
+    letter-spacing: 1.2px;
+    color: var(--gold-light);
+    border-bottom: none;
+    position: sticky;
+    top: 53px;
+    z-index: 10;
+  }
+  /* Sub-header row */
+  thead tr:first-child th { top: 53px; }
+  thead tr:nth-child(2) th { top: 95px; }
+
+  /* WEEK SEPARATOR ROWS */
+  .week-sep td {
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 10px 16px;
+    text-transform: uppercase;
+    border: none;
+  }
+  .week-sep.week2 td { background: var(--navy-mid); color: var(--gold-light); }
+
+  /* BODY ROWS */
+  tbody tr.exam-row {
+    border-bottom: 1px solid var(--gray-200);
+    transition: background .15s;
+  }
+  tbody tr.exam-row:hover { background: rgba(10,22,40,0.032); }
+  tbody tr.exam-row.hidden { display: none; }
+
+  /* Day-group styling: stripe alternating days */
+  tbody tr.exam-row.day-even { background: #fafafa; }
+  tbody tr.exam-row.day-even:hover { background: rgba(10,22,40,0.04); }
+
+  td {
+    padding: 11px 14px;
+    vertical-align: top;
+    line-height: 1.45;
+  }
+  td.center { text-align: center; }
+
+  /* DATE cell */
+  .td-date {
+    font-weight: 600;
+    font-size: 13px;
+    white-space: nowrap;
+    min-width: 108px;
+  }
+  .date-day {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: var(--gray-400);
+    display: block;
+    margin-bottom: 1px;
+  }
+  .date-full { color: var(--navy); }
+
+  /* TIME cell */
+  .time-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 9px;
+    border-radius: 100px;
+    font-size: 11.5px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .time-morning { background: var(--morning-light); color: var(--morning); }
+  .time-afternoon { background: var(--afternoon-light); color: var(--afternoon); }
+  .time-badge::before { content: '●'; font-size: 7px; }
+
+  /* EXAM NAME cell */
+  .td-exam { min-width: 210px; }
+  .exam-link {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13.5px;
+    line-height: 1.35;
+    transition: color .15s;
+  }
+  .exam-link:hover { color: var(--morning); text-decoration: underline; }
+  .exam-note {
+    display: block;
+    font-size: 11px;
+    color: var(--gray-400);
+    font-weight: 400;
+    margin-top: 2px;
+    font-style: italic;
+  }
+
+  /* DURATION cell */
+  .td-duration {
+    font-weight: 600;
+    font-size: 13px;
+    white-space: nowrap;
+    color: var(--navy);
+  }
+
+  /* MCQ / FRQ cells */
+  .td-num {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--navy);
+    text-align: center;
+    min-width: 52px;
+  }
+  .td-num .q-note {
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--gray-400);
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+  .td-time-sub {
+    font-size: 12.5px;
+    color: var(--gray-600);
+    white-space: nowrap;
+    text-align: center;
+    min-width: 68px;
+  }
+
+  /* special / n/a */
+  .na-cell {
+    color: var(--gray-400);
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+  }
+  .special-cell {
+    font-size: 11.5px;
+    color: var(--gray-600);
+    line-height: 1.4;
+  }
+
+  /* Week accent bar */
+  .week1-accent { border-left: 3px solid var(--week1-border); }
+  .week2-accent { border-left: 3px solid var(--week2); }
+
+  /* FOOTER */
+  .page-footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 20px 40px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .page-footer a { color: var(--gold); text-decoration: none; }
+  .page-footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 700px) {
+    .page-header, .controls-bar, .table-outer { padding-left: 16px; padding-right: 16px; }
+    .controls-bar { position: static; }
+    #searchInput { width: 160px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════════════════ -->
+<header class="page-header">
+  <div class="header-inner">
+    <p class="header-kicker">College Board · Official Exam Information</p>
+    <h1 class="header-title">2026 AP Exam<br>Complete Reference Guide</h1>
+    <p class="header-sub">All exams scheduled May 4–15, 2026. Dates, times, total duration, and full MCQ/FRQ section breakdowns sourced directly from AP Central for every exam.</p>
+    <div class="header-meta">
+      <span class="meta-pill"><span class="dot"></span>38 Exams Listed</span>
+      <span class="meta-pill"><span class="dot"></span>Week 1: May 4–8</span>
+      <span class="meta-pill"><span class="dot"></span>Week 2: May 11–15</span>
+      <span class="meta-pill"><span class="dot"></span>Source: apcentral.collegeboard.org</span>
+    </div>
+  </div>
+</header>
+
+<!-- ══ STICKY CONTROLS ══════════════════════════════════════════════ -->
+<div class="controls-bar">
+  <div class="controls-inner">
+    <span class="legend-label">Key</span>
+    <span class="legend-item"><span class="legend-swatch swatch-morning"></span>Morning (8 AM)</span>
+    <span class="legend-item"><span class="legend-swatch swatch-afternoon"></span>Afternoon (12 PM)</span>
+    <span class="legend-item"><span class="legend-swatch swatch-week1"></span>Week 1</span>
+    <span class="legend-item"><span class="legend-swatch swatch-week2"></span>Week 2</span>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Filter exams…" oninput="filterTable(this.value)">
+    </div>
+  </div>
+</div>
+
+<!-- ══ TABLE ══════════════════════════════════════════════════════ -->
+<div class="table-outer">
+<div class="table-scroll">
+<table id="apTable">
+<thead>
+  <tr>
+    <th rowspan="2">Date</th>
+    <th rowspan="2">Time</th>
+    <th rowspan="2">AP Exam</th>
+    <th rowspan="2" class="center">Total<br>Duration</th>
+    <th colspan="2" class="center th-group">MCQ Section</th>
+    <th colspan="2" class="center th-group">FRQ Section</th>
+  </tr>
+  <tr>
+    <th class="center">No. of Qs</th>
+    <th class="center">Duration</th>
+    <th class="center">No. of Qs</th>
+    <th class="center">Duration</th>
+  </tr>
+</thead>
+<tbody>
+
+<!-- ═══ WEEK 1 ═══════════════════════════════════════════════════ -->
+<tr class="week-sep"><td colspan="8">⬥ Week 1 — May 4–8, 2026</td></tr>
+
+<!-- MAY 4 MORNING -->
+<tr class="exam-row week1-accent" data-name="biology">
+  <td class="td-date"><span class="date-day">Mon</span><span class="date-full">May 4, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-biology/exam" target="_blank">AP Biology</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
+  <td class="td-duration center">3 hrs</td>
+  <td class="td-num center">60<span class="q-note">discrete &amp; sets</span></td>
+  <td class="td-time-sub center">90 min</td>
+  <td class="td-num center">6<span class="q-note">2 long, 4 short</span></td>
+  <td class="td-time-sub center">90 min</td>
+</tr>
+
+<tr class="exam-row week1-accent day-even" data-name="latin">
+  <td class="td-date"><span class="date-day">Mon</span><span class="date-full">May 4, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-latin/exam" target="_blank">AP Latin</a><span class="exam-note">Fully digital (Bluebook) + course project checkpoints (2% of score)</span></td>
+  <td class="td-duration center">3 hrs</td>
+  <td class="td-num center">52<span class="q-note">discrete, short &amp; long sets</span></td>
+  <td class="td-time-sub center">65 min</td>
+  <td class="td-num center">5<span class="q-note">SAQ, translation, essays, project passages</span></td>
+  <td class="td-time-sub center">115 min</td>
+</tr>
+
+<!-- MAY 4 AFTERNOON -->
+<tr class="exam-row week1-accent" data-name="european history">
+  <td class="td-date"><span class="date-day">Mon</span><span class="date-full">May 4, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-european-history/exam" target="_blank">AP European History</a><span class="exam-note">Fully digital (Bluebook)</span></td>
+  <td class="td-duration center">3 hrs 15 min</td>
+  <td class="td-num center">55<span class="q-note">sets of 3–4</span></td>
+  <td class="td-time-sub center">55 min</td>
+  <td class="td-num center">5<span class="q-note">3 SAQ + DBQ + Long Essay</span></td>
+  <td class="td-time-sub center">2 hrs 20 min</td>
+</tr>
+
+<tr class="exam-row week1-accent day-even" data-name="microeconomics">
+  <td class="td-date"><span class="date-day">Mon</span><span class="date-full">May 4, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-microeconomics/exam" target="_blank">AP Microeconomics</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
+  <td class="td-duration center">2 hrs 10 min</td>
+  <td class="td-num center">60</td>
+  <td class="td-time-sub center">70 min</td>
+  <td class="td-num center">3<span class="q-note">1 long, 2 short</span></td>
+  <td class="td-time-sub center">60 min<span class="q-note">incl. 10 min reading</span></td>
+</tr>
+
+<!-- MAY 5 MORNING -->
+<tr class="exam-row week1-accent" data-name="chemistry">
+  <td class="td-date"><span class="date-day">Tue</span><span class="date-full">May 5, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-chemistry/exam" target="_blank">AP Chemistry</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
+  <td class="td-duration center">3 hrs 15 min</td>
+  <td class="td-num center">60<span class="q-note">discrete &amp; sets</span></td>
+  <td class="td-time-sub center">90 min</td>
+  <td class="td-num center">7<span class="q-note">3 long, 4 short</span></td>
+  <td class="td-time-sub center">105 min</td>
+</tr>
+
+<tr class="exam-row week1-accent day-even" data-name="human geography">
+  <td class="td-date"><span class="date-day">Tue</span><span class="date-full">May 5, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-human-geography/exam" target="_blank">AP Human Geography</a><span class="exam-note">Fully digital (Bluebook)</span></td>
+  <td class="td-duration center">2 hrs 15 min</td>
+  <td class="td-num center">60<span class="q-note">individual &amp; set-based</span></td>
+  <td class="td-time-sub center">60 min</td>
+  <td class="td-num center">3<span class="q-note">Q1: no stimulus; Q2: 1 stimulus; Q3: 2 stimuli</span></td>
+  <td class="td-time-sub center">75 min</td>
+</tr>
+
+<!-- MAY 5 AFTERNOON -->
+<tr class="exam-row week1-accent" data-name="us government politics">
+  <td class="td-date"><span class="date-day">Tue</span><span class="date-full">May 5, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-united-states-government-and-politics/exam" target="_blank">AP United States Government and Politics</a><span class="exam-note">Fully digital (Bluebook)</span></td>
+  <td class="td-duration center">3 hrs</td>
+  <td class="td-num center">55<span class="q-note">individual &amp; set-based</span></td>
+  <td class="td-time-sub center">80 min</td>
+  <td class="td-num center">4<span class="q-note">Concept App, Quant Analysis, SCOTUS Comparison, Argument Essay</span></td>
+  <td class="td-time-sub center">100 min</td>
+</tr>
+
+<!-- MAY 6 MORNING -->
+<tr class="exam-row week1-accent day-even" data-name="english literature composition">
+  <td class="td-date"><span class="date-day">Wed</span><span class="date-full">May 6, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-english-literature-and-composition/exam" target="_blank">AP English Literature and Composition</a><span class="exam-note">Fully digital (Bluebook)</span></td>
+  <td class="td-duration center">3 hrs</td>
+  <td class="td-num center">55<span class="q-note">5 sets; prose, drama, poetry</span></td>
+  <td class="td-time-sub center">60 min</td>
+  <td class="td-num center">3<span class="q-note">poem analysis, prose analysis, open question essay</span></td>
+  <td class="td-time-sub center">2 hrs</td>
+</tr>
+
+<!-- MAY 6 AFTERNOON -->
+<tr class="exam-row week1-accent" data-name="comparative government politics">
+  <td class="td-date"><span class="date-day">Wed</span><span class="date-full">May 6, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-comparative-government-and-politics/exam" target="_blank">AP Comparative Government and Politics</a><span class="exam-note">Fully digital (Bluebook)</span></td>
+  <td class="td-duration center">2 hrs 30 min</td>
+  <td class="td-num center">55<span class="q-note">40–44 individual; sets: quant &amp; qualitative</span></td>
+  <td class="td-time-sub center">60 min</td>
+  <td class="td-num center">4<span class="q-note">Concept App, Quant, Comparative, Argument Essay</span></td>
+  <td class="td-time-sub center">90 min</td>
+</tr>
+
+<tr class="exam-row week1-accent day-even" data-name="physics 1 algebra">
+  <td class="td-date"><span class="date-day">Wed</span><span class="date-full">May 6, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-physics-1/exam" target="_blank">AP Physics 1: Algebra-Based</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
+  <td class="td-duration center">3 hrs</td>
+  <td class="td-num center">40<span class="q-note">discrete &amp; sets</span></td>
+  <td class="td-time-sub center">80 min</td>
+  <td class="td-num center">4<span class="q-note">Mathematical routines, Representations, Experimental design, Qual/Quant translation</span></td>
+  <td class="td-time-sub center">100 min</td>
+</tr>
+
+<!-- MAY 7 MORNING -->
+<tr class="exam-row week1-accent" data-name="physics 2 algebra">
+  <td class="td-date"><span class="date-day">Thu</span><span class="date-full">May 7, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-physics-2/exam" target="_blank">AP Physics 2: Algebra-Based</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
+  <td class="td-duration center">3 hrs</td>
+  <td class="td-num center">40<span class="q-note">discrete &amp; sets</span></td>
+  <td class="td-time-sub center">80 min</td>
+  <td class="td-num center">4<span class="q-note">Mathematical routines, Representations, Experimental design, Qual/Quant translation</span></td>
+  <td class="td-time-sub center">100 min</td>
+</tr>
+
+<tr class="exam-row week1-accent day-even" data-name="world history modern">
+  <td class="td-date"><span class="date-day">Thu</span><span class="date-full">May 7, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-world-history/exam" target="_blank">AP World History: Modern</a><span class="exam-note">Fully digital (Bluebook)</span></td>
+  <td class="td-duration center">3 hrs 15 min</td>
+  <td class="td-num center">55<span class="q-note">sets of 3–4</span></td>
+  <td class="td-time-sub center">55 min</td>
+  <td class="td-num center">5<span class="q-note">3 SAQ + DBQ + Long Essay</span></td>
+  <td class="td-time-sub center">2 hrs 20 min</td>
+</tr>
+
+<!-- MAY 7 AFTERNOON -->
+<tr class="exam-row week1-accent" data-name="african american studies">
+  <td class="td-date"><span class="date-day">Thu</span><span class="date-full">May 7, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-african-american-studies/exam" target="_blank">AP African American Studies</a><span class="exam-note">Fully digital (Bluebook) + Individual Student Project (8.5% of score)</span></td>
+  <td class="td-duration center">~2 hrs 45 min</td>
+  <td class="td-num center">60<span class="q-note">sets of 3–4</span></td>
+  <td class="td-time-sub center">70 min</td>
+  <td class="td-num center">4<span class="q-note">3 SAQ + 1 DBQ</span></td>
+  <td class="td-time-sub center">85 min</td>
+</tr>
+
+<tr class="exam-row week1-accent day-even" data-name="statistics">
+  <td class="td-date"><span class="date-day">Thu</span><span class="date-full">May 7, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-statistics/exam" target="_blank">AP Statistics</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
+  <td class="td-duration center">3 hrs</td>
+  <td class="td-num center">40<span class="q-note">individual &amp; set-based</span></td>
+  <td class="td-time-sub center">90 min</td>
+  <td class="td-num center">6<span class="q-note">5 short + 1 investigative task</span></td>
+  <td class="td-time-sub center">90 min</td>
+</tr>
+
+<!-- MAY 8 MORNING -->
+<tr class="exam-row week1-accent" data-name="italian language culture">
+  <td class="td-date"><span class="date-day">Fri</span><span class="date-full">May 8, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-italian-language-and-culture/exam" target="_blank">AP Italian Language and Culture</a><span class="exam-note">Paper exam with recorded spoken FRQ; revisions launch 2026-27</span></td>
+  <td class="td-duration center">~3 hrs</td>
+  <td class="td-num center">~65<span class="q-note">Print texts (Sec IA) + Audio texts (Sec IB)</span></td>
+  <td class="td-time-sub center">~95 min</td>
+  <td class="td-num center">4<span class="q-note">Email reply, Argumentative essay, Simulated conversation (5 exchanges), 2-min presentation</span></td>
+  <td class="td-time-sub center">~85 min</td>
+</tr>
+
+<tr class="exam-row week1-accent day-even" data-name="us history united states">
+  <td class="td-date"><span class="date-day">Fri</span><span class="date-full">May 8, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-united-states-history/exam" target="_blank">AP United States History</a><span class="exam-note">Fully digital (Bluebook)</span></td>
+  <td class="td-duration center">3 hrs 15 min</td>
+  <td class="td-num center">55<span class="q-note">sets of 3–4</span></td>
+  <td class="td-time-sub center">55 min</td>
+  <td class="td-num center">5<span class="q-note">3 SAQ + DBQ + Long Essay</span></td>
+  <td class="td-time-sub center">2 hrs 20 min</td>
+</tr>
+
+<!-- MAY 8 AFTERNOON -->
+<tr class="exam-row week1-accent" data-name="chinese language culture">
+  <td class="td-date"><span class="date-day">Fri</span><span class="date-full">May 8, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-chinese-language-and-culture/exam" target="_blank">AP Chinese Language and Culture</a><span class="exam-note">School device / AP exam app (not Bluebook); revisions launch 2026-27</span></td>
+  <td class="td-duration center">~2 hrs 30 min</td>
+  <td class="td-num center">55–75<span class="q-note">Listening (25–35 Qs) + Reading (30–40 Qs)</span></td>
+  <td class="td-time-sub center">~80 min</td>
+  <td class="td-num center">4<span class="q-note">Story narration, Email reply, Simulated conversation, Cultural presentation</span></td>
+  <td class="td-time-sub center">~40 min</td>
+</tr>
+
+<tr class="exam-row week1-accent day-even" data-name="macroeconomics">
+  <td class="td-date"><span class="date-day">Fri</span><span class="date-full">May 8, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-macroeconomics/exam" target="_blank">AP Macroeconomics</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
+  <td class="td-duration center">2 hrs 10 min</td>
+  <td class="td-num center">60</td>
+  <td class="td-time-sub center">70 min</td>
+  <td class="td-num center">3<span class="q-note">1 long, 2 short</span></td>
+  <td class="td-time-sub center">60 min<span class="q-note">incl. 10 min reading</span></td>
+</tr>
+
+<!-- ═══ WEEK 2 ═════════════════════════════════════════════════ -->
+<tr class="week-sep week2"><td colspan="8">⬥ Week 2 — May 11–15, 2026</td></tr>
+
+<!-- MAY 11 MORNING -->
+<tr class="exam-row week2-accent" data-name="calculus ab">
+  <td class="td-date"><span class="date-day">Mon</span><span class="date-full">May 11, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-calculus-ab/exam" target="_blank">AP Calculus AB</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
+  <td class="td-duration center">3 hrs 15 min</td>
+  <td class="td-num center">45<span class="q-note">Pt A: 30 Qs (no calc); Pt B: 15 Qs (calc)</span></td>
+  <td class="td-time-sub center">105 min</td>
+  <td class="td-num center">6<span class="q-note">Pt A: 2 Qs (calc); Pt B: 4 Qs (no calc)</span></td>
+  <td class="td-time-sub center">90 min</td>
+</tr>
+
+<tr class="exam-row week2-accent day-even" data-name="calculus bc">
+  <td class="td-date"><span class="date-day">Mon</span><span class="date-full">May 11, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-calculus-bc/exam" target="_blank">AP Calculus BC</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
+  <td class="td-duration center">3 hrs 15 min</td>
+  <td class="td-num center">45<span class="q-note">Pt A: 30 Qs (no calc); Pt B: 15 Qs (calc)</span></td>
+  <td class="td-time-sub center">105 min</td>
+  <td class="td-num center">6<span class="q-note">Pt A: 2 Qs (calc); Pt B: 4 Qs (no calc)</span></td>
+  <td class="td-time-sub center">90 min</td>
+</tr>
+
+<!-- MAY 11 AFTERNOON -->
+<tr class="exam-row week2-accent" data-name="music theory">
+  <td class="td-date"><span class="date-day">Mon</span><span class="date-full">May 11, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-music-theory/exam" target="_blank">AP Music Theory</a><span class="exam-note">Paper exam with recorded singing component</span></td>
+  <td class="td-duration center">~3 hrs 10 min</td>
+  <td class="td-num center">75<span class="q-note">~13 sets of 4–6 Qs + ~10-12 individual Qs</span></td>
+  <td class="td-time-sub center">~80 min</td>
+  <td class="td-num center">8<span class="q-note">7 written FRQs + 1 sight-singing task (recorded)</span></td>
+  <td class="td-time-sub center">~110 min</td>
+</tr>
+
+<tr class="exam-row week2-accent day-even" data-name="seminar capstone">
+  <td class="td-date"><span class="date-day">Mon</span><span class="date-full">May 11, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-seminar/exam" target="_blank">AP Seminar</a><span class="exam-note">Fully digital end-of-course exam (Bluebook); also 2 performance tasks (55% of score) submitted by Apr 30</span></td>
+  <td class="td-duration center">2 hrs</td>
+  <td class="td-num center">—<span class="q-note">No MCQ section</span></td>
+  <td class="td-time-sub center na-cell">N/A</td>
+  <td class="td-num center">4<span class="q-note">3 short-answer Qs (~30 min) + 1 long essay (~90 min)</span></td>
+  <td class="td-time-sub center">2 hrs</td>
+</tr>
+
+<!-- MAY 12 MORNING -->
+<tr class="exam-row week2-accent" data-name="french language culture">
+  <td class="td-date"><span class="date-day">Tue</span><span class="date-full">May 12, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-french-language-and-culture/exam" target="_blank">AP French Language and Culture</a><span class="exam-note">Paper exam with recorded spoken FRQ; revisions launch 2026-27</span></td>
+  <td class="td-duration center">~3 hrs</td>
+  <td class="td-num center">~65<span class="q-note">Print texts (30 Qs, 40 min) + Audio texts (~35 Qs, ~55 min)</span></td>
+  <td class="td-time-sub center">~95 min</td>
+  <td class="td-num center">4<span class="q-note">Email reply, Argumentative essay, Simulated conversation, 2-min presentation</span></td>
+  <td class="td-time-sub center">~88 min</td>
+</tr>
+
+<tr class="exam-row week2-accent day-even" data-name="precalculus">
+  <td class="td-date"><span class="date-day">Tue</span><span class="date-full">May 12, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-precalculus/exam" target="_blank">AP Precalculus</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
+  <td class="td-duration center">3 hrs 20 min</td>
+  <td class="td-num center">40<span class="q-note">Pt A: 28 Qs (no tech); Pt B: 12 Qs (tech active)</span></td>
+  <td class="td-time-sub center">120 min</td>
+  <td class="td-num center">4<span class="q-note">Pt A: 2 Qs (no tech); Pt B: 2 Qs (tech active)</span></td>
+  <td class="td-time-sub center">80 min</td>
+</tr>
+
+<!-- MAY 12 AFTERNOON -->
+<tr class="exam-row week2-accent" data-name="japanese language culture">
+  <td class="td-date"><span class="date-day">Tue</span><span class="date-full">May 12, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-japanese-language-and-culture/exam" target="_blank">AP Japanese Language and Culture</a><span class="exam-note">School device / AP exam app (not Bluebook); revisions launch 2026-27</span></td>
+  <td class="td-duration center">~2 hrs 30 min</td>
+  <td class="td-num center">~60<span class="q-note">Listening + Reading MCQ</span></td>
+  <td class="td-time-sub center">~80 min</td>
+  <td class="td-num center">4<span class="q-note">Story narration, Email reply, Simulated conversation, Cultural presentation</span></td>
+  <td class="td-time-sub center">~40 min</td>
+</tr>
+
+<tr class="exam-row week2-accent day-even" data-name="psychology">
+  <td class="td-date"><span class="date-day">Tue</span><span class="date-full">May 12, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-psychology/exam" target="_blank">AP Psychology</a><span class="exam-note">Fully digital (Bluebook)</span></td>
+  <td class="td-duration center">2 hrs 40 min</td>
+  <td class="td-num center">75<span class="q-note">concept application, research, data interpretation</span></td>
+  <td class="td-time-sub center">90 min</td>
+  <td class="td-num center">2<span class="q-note">Article Analysis Q (AAQ) + Evidence-Based Q (EBQ)</span></td>
+  <td class="td-time-sub center">70 min</td>
+</tr>
+
+<!-- MAY 13 MORNING -->
+<tr class="exam-row week2-accent" data-name="english language composition">
+  <td class="td-date"><span class="date-day">Wed</span><span class="date-full">May 13, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-english-language-and-composition/exam" target="_blank">AP English Language and Composition</a><span class="exam-note">Fully digital (Bluebook)</span></td>
+  <td class="td-duration center">3 hrs 15 min</td>
+  <td class="td-num center">45<span class="q-note">5 sets: 23–25 reading + 20–22 writing</span></td>
+  <td class="td-time-sub center">60 min</td>
+  <td class="td-num center">3<span class="q-note">Synthesis, Rhetorical Analysis, Argument</span></td>
+  <td class="td-time-sub center">135 min<span class="q-note">incl. 15 min reading</span></td>
+</tr>
+
+<tr class="exam-row week2-accent day-even" data-name="german language culture">
+  <td class="td-date"><span class="date-day">Wed</span><span class="date-full">May 13, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-german-language-and-culture/exam" target="_blank">AP German Language and Culture</a><span class="exam-note">Paper exam with recorded spoken FRQ; revisions launch 2026-27</span></td>
+  <td class="td-duration center">~3 hrs</td>
+  <td class="td-num center">~65<span class="q-note">Print texts (30 Qs, 40 min) + Audio texts (~35 Qs, ~55 min)</span></td>
+  <td class="td-time-sub center">~95 min</td>
+  <td class="td-num center">4<span class="q-note">Email reply, Argumentative essay, Simulated conversation, 2-min presentation</span></td>
+  <td class="td-time-sub center">~88 min</td>
+</tr>
+
+<!-- MAY 13 AFTERNOON -->
+<tr class="exam-row week2-accent" data-name="physics c mechanics">
+  <td class="td-date"><span class="date-day">Wed</span><span class="date-full">May 13, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-physics-c-mechanics/exam" target="_blank">AP Physics C: Mechanics</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
+  <td class="td-duration center">2 hrs 40 min</td>
+  <td class="td-num center">40<span class="q-note">discrete &amp; sets</span></td>
+  <td class="td-time-sub center">80 min</td>
+  <td class="td-num center">3<span class="q-note">multi-part problems</span></td>
+  <td class="td-time-sub center">80 min<span class="q-note">incl. 10 min reading</span></td>
+</tr>
+
+<tr class="exam-row week2-accent day-even" data-name="spanish literature culture">
+  <td class="td-date"><span class="date-day">Wed</span><span class="date-full">May 13, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-spanish-literature-and-culture/exam" target="_blank">AP Spanish Literature and Culture</a><span class="exam-note">Paper exam with audio CD; written FRQ + essays</span></td>
+  <td class="td-duration center">~3 hrs</td>
+  <td class="td-num center">65<span class="q-note">Listening (15 Qs, 20 min) + Reading (50 Qs, 60 min)</span></td>
+  <td class="td-time-sub center">80 min</td>
+  <td class="td-num center">4<span class="q-note">2 short-answer + 2 essay (text analysis, text comparison)</span></td>
+  <td class="td-time-sub center">100 min</td>
+</tr>
+
+<!-- MAY 14 MORNING -->
+<tr class="exam-row week2-accent" data-name="art history">
+  <td class="td-date"><span class="date-day">Thu</span><span class="date-full">May 14, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-art-history/exam" target="_blank">AP Art History</a><span class="exam-note">Fully digital (Bluebook)</span></td>
+  <td class="td-duration center">3 hrs</td>
+  <td class="td-num center">80<span class="q-note">sets of 2–3 + individual Qs; all image-based</span></td>
+  <td class="td-time-sub center">60 min</td>
+  <td class="td-num center">6<span class="q-note">1 long Comparison essay + 5 short essays (Visual Analysis, Attribution, Context, Continuity &amp; Change, Image-Based)</span></td>
+  <td class="td-time-sub center">2 hrs</td>
+</tr>
+
+<tr class="exam-row week2-accent day-even" data-name="spanish language culture">
+  <td class="td-date"><span class="date-day">Thu</span><span class="date-full">May 14, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-spanish-language-and-culture/exam" target="_blank">AP Spanish Language and Culture</a><span class="exam-note">Paper exam with recorded spoken FRQ; revisions launch 2026-27</span></td>
+  <td class="td-duration center">~3 hrs</td>
+  <td class="td-num center">65<span class="q-note">Print texts (30 Qs, 40 min) + Audio texts (35 Qs, 55 min)</span></td>
+  <td class="td-time-sub center">95 min</td>
+  <td class="td-num center">4<span class="q-note">Email reply, Argumentative essay, Simulated conversation (5 exchanges), 2-min presentation</span></td>
+  <td class="td-time-sub center">88 min</td>
+</tr>
+
+<!-- MAY 14 AFTERNOON -->
+<tr class="exam-row week2-accent" data-name="computer science principles csp">
+  <td class="td-date"><span class="date-day">Thu</span><span class="date-full">May 14, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles/exam" target="_blank">AP Computer Science Principles</a><span class="exam-note">Fully digital (Bluebook) + Create Performance Task submitted by Apr 30 (30% of score)</span></td>
+  <td class="td-duration center">3 hrs</td>
+  <td class="td-num center">70<span class="q-note">57 single-select + 5 with reading passage + 8 multi-select</span></td>
+  <td class="td-time-sub center">120 min</td>
+  <td class="td-num center">2<span class="q-note">Written responses to 4 prompts (WR1, WR2a, WR2b, WR2c) based on Personalized Project Reference</span></td>
+  <td class="td-time-sub center">60 min</td>
+</tr>
+
+<tr class="exam-row week2-accent day-even" data-name="physics c electricity magnetism em">
+  <td class="td-date"><span class="date-day">Thu</span><span class="date-full">May 14, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-physics-c-electricity-and-magnetism/exam" target="_blank">AP Physics C: Electricity and Magnetism</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
+  <td class="td-duration center">2 hrs 40 min</td>
+  <td class="td-num center">40<span class="q-note">discrete &amp; sets</span></td>
+  <td class="td-time-sub center">80 min</td>
+  <td class="td-num center">3<span class="q-note">multi-part problems</span></td>
+  <td class="td-time-sub center">80 min<span class="q-note">incl. 10 min reading</span></td>
+</tr>
+
+<!-- MAY 15 MORNING -->
+<tr class="exam-row week2-accent" data-name="environmental science">
+  <td class="td-date"><span class="date-day">Fri</span><span class="date-full">May 15, 2026</span></td>
+  <td><span class="time-badge time-morning">8 AM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-environmental-science/exam" target="_blank">AP Environmental Science</a><span class="exam-note">Fully digital (Bluebook)</span></td>
+  <td class="td-duration center">2 hrs 40 min</td>
+  <td class="td-num center">80<span class="q-note">sets with quant data, qualitative, &amp; text-based sources</span></td>
+  <td class="td-time-sub center">90 min</td>
+  <td class="td-num center">3<span class="q-note">Design investigation; Analyze problem &amp; propose solution; Analyze problem + calculations</span></td>
+  <td class="td-time-sub center">70 min</td>
+</tr>
+
+<!-- MAY 15 AFTERNOON -->
+<tr class="exam-row week2-accent day-even" data-name="computer science a csa java">
+  <td class="td-date"><span class="date-day">Fri</span><span class="date-full">May 15, 2026</span></td>
+  <td><span class="time-badge time-afternoon">12 PM</span></td>
+  <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-computer-science-a/exam" target="_blank">AP Computer Science A</a><span class="exam-note">Fully digital (Bluebook); Java Quick Reference provided</span></td>
+  <td class="td-duration center">3 hrs</td>
+  <td class="td-num center">42<span class="q-note">mostly individual; occasional 2-Q sets</span></td>
+  <td class="td-time-sub center">90 min</td>
+  <td class="td-num center">4<span class="q-note">Methods &amp; Control Structures, Class Design, ArrayList, 2D Array</span></td>
+  <td class="td-time-sub center">90 min</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<!-- NOTES SECTION -->
+<div style="margin-top: 32px; background: var(--white); border-radius: 14px; padding: 28px 32px; box-shadow: var(--shadow); border-left: 4px solid var(--gold);">
+  <h3 style="font-family: 'Playfair Display', serif; font-size: 17px; color: var(--navy); margin-bottom: 14px;">📌 Important Notes for Students &amp; Coaches</h3>
+  <ul style="list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px 28px;">
+    <li style="font-size: 13px; color: var(--gray-600); padding-left: 16px; position: relative; line-height: 1.55;"><span style="position:absolute; left:0; color:var(--gold);">▸</span><strong style="color:var(--navy);">Morning exams</strong> begin between 8–9 AM local time.</li>
+    <li style="font-size: 13px; color: var(--gray-600); padding-left: 16px; position: relative; line-height: 1.55;"><span style="position:absolute; left:0; color:var(--gold);">▸</span><strong style="color:var(--navy);">Afternoon exams</strong> begin between 12–1 PM local time.</li>
+    <li style="font-size: 13px; color: var(--gray-600); padding-left: 16px; position: relative; line-height: 1.55;"><span style="position:absolute; left:0; color:var(--gold);">▸</span><strong style="color:var(--navy);">AP Seminar &amp; AP CSP</strong> performance tasks must be submitted by <strong>April 30, 2026 (11:59 PM ET)</strong>.</li>
+    <li style="font-size: 13px; color: var(--gray-600); padding-left: 16px; position: relative; line-height: 1.55;"><span style="position:absolute; left:0; color:var(--gold);">▸</span><strong style="color:var(--navy);">AP Art &amp; Design</strong> portfolio deadline: <strong>May 8, 2026 (8 PM ET)</strong>.</li>
+    <li style="font-size: 13px; color: var(--gray-600); padding-left: 16px; position: relative; line-height: 1.55;"><span style="position:absolute; left:0; color:var(--gold);">▸</span><strong style="color:var(--navy);">World Language exams</strong> (French, German, Italian, Spanish Lang, Chinese, Japanese) will undergo format revisions beginning in <strong>May 2027</strong>. 2026 exams use current format.</li>
+    <li style="font-size: 13px; color: var(--gray-600); padding-left: 16px; position: relative; line-height: 1.55;"><span style="position:absolute; left:0; color:var(--gold);">▸</span><strong style="color:var(--navy);">AP Latin</strong> revised for 2025-26: 52 MCQs (65 min), 5 FRQs (115 min), plus course project checkpoints (2%).</li>
+    <li style="font-size: 13px; color: var(--gray-600); padding-left: 16px; position: relative; line-height: 1.55;"><span style="position:absolute; left:0; color:var(--gold);">▸</span><strong style="color:var(--navy);">AP Psychology</strong> revised for 2024-25: 75 MCQs (90 min), 2 new FRQ types (AAQ + EBQ).</li>
+    <li style="font-size: 13px; color: var(--gray-600); padding-left: 16px; position: relative; line-height: 1.55;"><span style="position:absolute; left:0; color:var(--gold);">▸</span><strong style="color:var(--navy);">Late-testing dates</strong> are available for scheduling conflicts. Contact your AP Coordinator.</li>
+    <li style="font-size: 13px; color: var(--gray-600); padding-left: 16px; position: relative; line-height: 1.55;"><span style="position:absolute; left:0; color:var(--gold);">▸</span>Click any exam name to go directly to its official College Board exam page.</li>
+  </ul>
+</div>
+</div>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════════ -->
+<footer class="page-footer">
+  <p>Data sourced from <a href="https://apcentral.collegeboard.org/exam-administration-ordering-scores/exam-dates" target="_blank">AP Central — College Board</a> · Retrieved April 2026 · All details subject to change; always verify at apcentral.collegeboard.org</p>
+</footer>
+
+<script>
+function filterTable(val) {
+  const rows = document.querySelectorAll('#apTable tbody tr.exam-row');
+  const q = val.trim().toLowerCase();
+  rows.forEach(row => {
+    const name = (row.dataset.name || '') + ' ' + (row.querySelector('.exam-link')?.textContent || '');
+    row.classList.toggle('hidden', q.length > 0 && !name.toLowerCase().includes(q));
+  });
+}
+</script>
+</body>
+</html>
