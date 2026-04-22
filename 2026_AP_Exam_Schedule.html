@@ -188,12 +188,12 @@
     text-align: left;
     white-space: nowrap;
     border-bottom: 3px solid var(--gold);
-    border-right: 1px solid rgba(255,255,255,0.12);
+    box-shadow: inset -1px 0 0 rgba(255,255,255,0.12);
     position: sticky;
     top: 53px;
     z-index: 10;
   }
-  thead th:last-child { border-right: none; }
+  thead th:last-child { box-shadow: none; }
   thead th.center { text-align: center; }
   thead .th-group {
     background: var(--navy-light);
@@ -201,8 +201,7 @@
     padding: 10px 14px;
     letter-spacing: 1.2px;
     color: var(--gold-light);
-    border-bottom: 2px solid rgba(201,168,76,0.35);
-    border-right: 1px solid rgba(255,255,255,0.18);
+    box-shadow: inset -1px 0 0 rgba(255,255,255,0.18), inset 0 -2px 0 rgba(201,168,76,0.35);
     position: sticky;
     top: 53px;
     z-index: 10;
@@ -243,6 +242,7 @@
     vertical-align: top;
     line-height: 1.45;
     border-right: 1px solid var(--gray-200);
+    height: 68px;
   }
   td:last-child { border-right: none; }
   td.center { text-align: center; }
