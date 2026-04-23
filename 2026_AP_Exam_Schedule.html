@@ -288,14 +288,21 @@
   /* EXAM NAME cell */
   .td-exam { min-width: 210px; }
   .exam-link {
-    color: var(--navy);
-    text-decoration: none;
+    color: var(--morning);
+    text-decoration: underline;
+    text-underline-offset: 3px;
     font-weight: 600;
     font-size: 13.5px;
     line-height: 1.35;
     transition: color .15s;
   }
-  .exam-link:hover { color: var(--morning); text-decoration: underline; }
+  .exam-link::after {
+    content: ' ↗';
+    font-size: 10px;
+    opacity: 0.6;
+    vertical-align: super;
+  }
+  .exam-link:hover { color: var(--navy); }
   .exam-note {
     display: block;
     font-size: 11px;
