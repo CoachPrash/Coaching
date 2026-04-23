@@ -194,6 +194,12 @@
     z-index: 10;
   }
   thead th:last-child { box-shadow: none; }
+
+  /* Thicker header dividers after Time, Total Duration, MCQ Section group */
+  thead tr:first-child th:nth-child(2),
+  thead tr:first-child th:nth-child(4),
+  thead tr:first-child th:nth-child(5) { box-shadow: inset -2.5px 0 0 rgba(255,255,255,0.35); }
+  thead tr:nth-child(2) th:nth-child(2) { box-shadow: inset -2.5px 0 0 rgba(255,255,255,0.35); }
   thead th.center { text-align: center; }
   thead .th-group {
     background: var(--navy-light);
@@ -241,6 +247,15 @@
   /* Day block borders */
   tbody tr.day-start td { border-top: 2.5px solid var(--gray-400); }
   tbody tr.day-end td { border-bottom: 2.5px solid var(--gray-400); }
+
+  /* Thicker dividers after: Time (col2), Total Duration (col4), MCQ Duration (col6) */
+  tbody td:nth-child(2),
+  tbody td:nth-child(4),
+  tbody td:nth-child(6) { border-right: 2.5px solid var(--gray-400); }
+
+  /* Right end accent border matching left week color */
+  tbody tr.week1-accent td:last-child { border-right: 3px solid var(--week1-border); }
+  tbody tr.week2-accent td:last-child { border-right: 3px solid var(--week2); }
 
   td {
     padding: 11px 14px;
