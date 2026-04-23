@@ -899,6 +899,14 @@
 </footer>
 
 <script>
+document.querySelectorAll('.td-num .q-note').forEach(el => {
+  el.innerHTML = el.textContent
+    .split(/\s*[+;]\s*/)
+    .map(s => s.trim())
+    .filter(Boolean)
+    .join('<br>');
+});
+
 function filterTable(val) {
   const rows = document.querySelectorAll('#apTable tbody tr.exam-row');
   const q = val.trim().toLowerCase();
