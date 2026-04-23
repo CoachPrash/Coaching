@@ -237,6 +237,10 @@
   tbody tr.exam-row.day-even { background: #fafafa; }
   tbody tr.exam-row.day-even:hover { background: rgba(10,22,40,0.04); }
 
+  /* Day block borders */
+  tbody tr.day-start td { border-top: 2.5px solid var(--gray-400); }
+  tbody tr.day-end td { border-bottom: 2.5px solid var(--gray-400); }
+
   td {
     padding: 11px 14px;
     vertical-align: top;
@@ -425,7 +429,7 @@
 <tr class="week-sep"><td colspan="8">⬥ Week 1 — May 4–8, 2026</td></tr>
 
 <!-- MAY 4 MORNING -->
-<tr class="exam-row week1-accent" data-name="biology">
+<tr class="exam-row week1-accent day-start" data-name="biology">
   <td class="td-date"><span class="date-day">Mon</span><span class="date-full">May 4, 2026</span></td>
   <td><span class="time-badge time-morning">8 AM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-biology/exam" target="_blank">AP Biology</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
@@ -459,7 +463,7 @@
   <td class="td-time-sub center">2 hrs 20 min</td>
 </tr>
 
-<tr class="exam-row week1-accent day-even" data-name="microeconomics">
+<tr class="exam-row week1-accent day-even day-end" data-name="microeconomics">
   <td class="td-date"><span class="date-day">Mon</span><span class="date-full">May 4, 2026</span></td>
   <td><span class="time-badge time-afternoon">12 PM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-microeconomics/exam" target="_blank">AP Microeconomics</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
@@ -471,7 +475,7 @@
 </tr>
 
 <!-- MAY 5 MORNING -->
-<tr class="exam-row week1-accent" data-name="chemistry">
+<tr class="exam-row week1-accent day-start" data-name="chemistry">
   <td class="td-date"><span class="date-day">Tue</span><span class="date-full">May 5, 2026</span></td>
   <td><span class="time-badge time-morning">8 AM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-chemistry/exam" target="_blank">AP Chemistry</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
@@ -494,7 +498,7 @@
 </tr>
 
 <!-- MAY 5 AFTERNOON -->
-<tr class="exam-row week1-accent" data-name="us government politics">
+<tr class="exam-row week1-accent day-end" data-name="us government politics">
   <td class="td-date"><span class="date-day">Tue</span><span class="date-full">May 5, 2026</span></td>
   <td><span class="time-badge time-afternoon">12 PM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-united-states-government-and-politics/exam" target="_blank">AP United States Government and Politics</a><span class="exam-note">Fully digital (Bluebook)</span></td>
@@ -506,7 +510,7 @@
 </tr>
 
 <!-- MAY 6 MORNING -->
-<tr class="exam-row week1-accent day-even" data-name="english literature composition">
+<tr class="exam-row week1-accent day-even day-start" data-name="english literature composition">
   <td class="td-date"><span class="date-day">Wed</span><span class="date-full">May 6, 2026</span></td>
   <td><span class="time-badge time-morning">8 AM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-english-literature-and-composition/exam" target="_blank">AP English Literature and Composition</a><span class="exam-note">Fully digital (Bluebook)</span></td>
@@ -529,7 +533,7 @@
   <td class="td-time-sub center">90 min</td>
 </tr>
 
-<tr class="exam-row week1-accent day-even" data-name="physics 1 algebra">
+<tr class="exam-row week1-accent day-even day-end" data-name="physics 1 algebra">
   <td class="td-date"><span class="date-day">Wed</span><span class="date-full">May 6, 2026</span></td>
   <td><span class="time-badge time-afternoon">12 PM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-physics-1/exam" target="_blank">AP Physics 1: Algebra-Based</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
@@ -541,7 +545,7 @@
 </tr>
 
 <!-- MAY 7 MORNING -->
-<tr class="exam-row week1-accent" data-name="physics 2 algebra">
+<tr class="exam-row week1-accent day-start" data-name="physics 2 algebra">
   <td class="td-date"><span class="date-day">Thu</span><span class="date-full">May 7, 2026</span></td>
   <td><span class="time-badge time-morning">8 AM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-physics-2/exam" target="_blank">AP Physics 2: Algebra-Based</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
@@ -575,7 +579,7 @@
   <td class="td-time-sub center">85 min</td>
 </tr>
 
-<tr class="exam-row week1-accent day-even" data-name="statistics">
+<tr class="exam-row week1-accent day-even day-end" data-name="statistics">
   <td class="td-date"><span class="date-day">Thu</span><span class="date-full">May 7, 2026</span></td>
   <td><span class="time-badge time-afternoon">12 PM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-statistics/exam" target="_blank">AP Statistics</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
@@ -587,7 +591,7 @@
 </tr>
 
 <!-- MAY 8 MORNING -->
-<tr class="exam-row week1-accent" data-name="italian language culture">
+<tr class="exam-row week1-accent day-start" data-name="italian language culture">
   <td class="td-date"><span class="date-day">Fri</span><span class="date-full">May 8, 2026</span></td>
   <td><span class="time-badge time-morning">8 AM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-italian-language-and-culture/exam" target="_blank">AP Italian Language and Culture</a><span class="exam-note">Paper exam with recorded spoken FRQ; revisions launch 2026-27</span></td>
@@ -621,7 +625,7 @@
   <td class="td-time-sub center">~40 min</td>
 </tr>
 
-<tr class="exam-row week1-accent day-even" data-name="macroeconomics">
+<tr class="exam-row week1-accent day-even day-end" data-name="macroeconomics">
   <td class="td-date"><span class="date-day">Fri</span><span class="date-full">May 8, 2026</span></td>
   <td><span class="time-badge time-afternoon">12 PM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-macroeconomics/exam" target="_blank">AP Macroeconomics</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
@@ -636,7 +640,7 @@
 <tr class="week-sep week2"><td colspan="8">⬥ Week 2 — May 11–15, 2026</td></tr>
 
 <!-- MAY 11 MORNING -->
-<tr class="exam-row week2-accent" data-name="calculus ab">
+<tr class="exam-row week2-accent day-start" data-name="calculus ab">
   <td class="td-date"><span class="date-day">Mon</span><span class="date-full">May 11, 2026</span></td>
   <td><span class="time-badge time-morning">8 AM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-calculus-ab/exam" target="_blank">AP Calculus AB</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
@@ -670,7 +674,7 @@
   <td class="td-time-sub center">~110 min</td>
 </tr>
 
-<tr class="exam-row week2-accent day-even" data-name="seminar capstone">
+<tr class="exam-row week2-accent day-even day-end" data-name="seminar capstone">
   <td class="td-date"><span class="date-day">Mon</span><span class="date-full">May 11, 2026</span></td>
   <td><span class="time-badge time-afternoon">12 PM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-seminar/exam" target="_blank">AP Seminar</a><span class="exam-note">Fully digital end-of-course exam (Bluebook); also 2 performance tasks (55% of score) submitted by Apr 30</span></td>
@@ -682,7 +686,7 @@
 </tr>
 
 <!-- MAY 12 MORNING -->
-<tr class="exam-row week2-accent" data-name="french language culture">
+<tr class="exam-row week2-accent day-start" data-name="french language culture">
   <td class="td-date"><span class="date-day">Tue</span><span class="date-full">May 12, 2026</span></td>
   <td><span class="time-badge time-morning">8 AM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-french-language-and-culture/exam" target="_blank">AP French Language and Culture</a><span class="exam-note">Paper exam with recorded spoken FRQ; revisions launch 2026-27</span></td>
@@ -693,7 +697,7 @@
   <td class="td-time-sub center">~88 min</td>
 </tr>
 
-<tr class="exam-row week2-accent day-even" data-name="precalculus">
+<tr class="exam-row week2-accent day-even day-end" data-name="precalculus">
   <td class="td-date"><span class="date-day">Tue</span><span class="date-full">May 12, 2026</span></td>
   <td><span class="time-badge time-morning">8 AM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-precalculus/exam" target="_blank">AP Precalculus</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
@@ -705,7 +709,7 @@
 </tr>
 
 <!-- MAY 12 AFTERNOON -->
-<tr class="exam-row week2-accent" data-name="japanese language culture">
+<tr class="exam-row week2-accent day-start" data-name="japanese language culture">
   <td class="td-date"><span class="date-day">Tue</span><span class="date-full">May 12, 2026</span></td>
   <td><span class="time-badge time-afternoon">12 PM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-japanese-language-and-culture/exam" target="_blank">AP Japanese Language and Culture</a><span class="exam-note">School device / AP exam app (not Bluebook); revisions launch 2026-27</span></td>
@@ -716,7 +720,7 @@
   <td class="td-time-sub center">~40 min</td>
 </tr>
 
-<tr class="exam-row week2-accent day-even" data-name="psychology">
+<tr class="exam-row week2-accent day-even day-end" data-name="psychology">
   <td class="td-date"><span class="date-day">Tue</span><span class="date-full">May 12, 2026</span></td>
   <td><span class="time-badge time-afternoon">12 PM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-psychology/exam" target="_blank">AP Psychology</a><span class="exam-note">Fully digital (Bluebook)</span></td>
@@ -728,7 +732,7 @@
 </tr>
 
 <!-- MAY 13 MORNING -->
-<tr class="exam-row week2-accent" data-name="english language composition">
+<tr class="exam-row week2-accent day-start" data-name="english language composition">
   <td class="td-date"><span class="date-day">Wed</span><span class="date-full">May 13, 2026</span></td>
   <td><span class="time-badge time-morning">8 AM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-english-language-and-composition/exam" target="_blank">AP English Language and Composition</a><span class="exam-note">Fully digital (Bluebook)</span></td>
@@ -751,7 +755,7 @@
 </tr>
 
 <!-- MAY 13 AFTERNOON -->
-<tr class="exam-row week2-accent" data-name="physics c mechanics">
+<tr class="exam-row week2-accent day-end" data-name="physics c mechanics">
   <td class="td-date"><span class="date-day">Wed</span><span class="date-full">May 13, 2026</span></td>
   <td><span class="time-badge time-afternoon">12 PM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-physics-c-mechanics/exam" target="_blank">AP Physics C: Mechanics</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
@@ -774,7 +778,7 @@
 </tr>
 
 <!-- MAY 14 MORNING -->
-<tr class="exam-row week2-accent" data-name="art history">
+<tr class="exam-row week2-accent day-start" data-name="art history">
   <td class="td-date"><span class="date-day">Thu</span><span class="date-full">May 14, 2026</span></td>
   <td><span class="time-badge time-morning">8 AM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-art-history/exam" target="_blank">AP Art History</a><span class="exam-note">Fully digital (Bluebook)</span></td>
@@ -808,7 +812,7 @@
   <td class="td-time-sub center">60 min</td>
 </tr>
 
-<tr class="exam-row week2-accent day-even" data-name="physics c electricity magnetism em">
+<tr class="exam-row week2-accent day-even day-end" data-name="physics c electricity magnetism em">
   <td class="td-date"><span class="date-day">Thu</span><span class="date-full">May 14, 2026</span></td>
   <td><span class="time-badge time-afternoon">12 PM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-physics-c-electricity-and-magnetism/exam" target="_blank">AP Physics C: Electricity and Magnetism</a><span class="exam-note">Hybrid digital (Bluebook + paper FRQ)</span></td>
@@ -820,7 +824,7 @@
 </tr>
 
 <!-- MAY 15 MORNING -->
-<tr class="exam-row week2-accent" data-name="environmental science">
+<tr class="exam-row week2-accent day-start day-end" data-name="environmental science">
   <td class="td-date"><span class="date-day">Fri</span><span class="date-full">May 15, 2026</span></td>
   <td><span class="time-badge time-morning">8 AM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-environmental-science/exam" target="_blank">AP Environmental Science</a><span class="exam-note">Fully digital (Bluebook)</span></td>
@@ -832,7 +836,7 @@
 </tr>
 
 <!-- MAY 15 AFTERNOON -->
-<tr class="exam-row week2-accent day-even" data-name="computer science a csa java">
+<tr class="exam-row week2-accent day-even day-start day-end" data-name="computer science a csa java">
   <td class="td-date"><span class="date-day">Fri</span><span class="date-full">May 15, 2026</span></td>
   <td><span class="time-badge time-afternoon">12 PM</span></td>
   <td class="td-exam"><a class="exam-link" href="https://apcentral.collegeboard.org/courses/ap-computer-science-a/exam" target="_blank">AP Computer Science A</a><span class="exam-note">Fully digital (Bluebook); Java Quick Reference provided</span></td>
